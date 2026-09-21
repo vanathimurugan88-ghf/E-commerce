@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vani - E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Vani</div>
+
+    <input type="text" id="search" placeholder="Search products...">
+
+    <button class="cart-btn" onclick="openCart()">
+        Cart (<span id="cartCount">0</span>)
+    </button>
+</header>
+
+<section class="hero">
+    <h1>Welcome to Vani</h1>
+    <p>Shop your favorite products at the best prices</p>
+</section>
+
+<div class="categories">
+    <button onclick="filterProducts('all')">All</button>
+    <button onclick="filterProducts('electronics')">Electronics</button>
+    <button onclick="filterProducts('fashion')">Fashion</button>
+    <button onclick="filterProducts('accessories')">Accessories</button>
+</div>
+
+<main>
+    <h2>Our Products</h2>
+    <div id="productList" class="product-container"></div>
+</main>
+
+<div id="productModal" class="modal">
+    <div class="modal-box">
+        <span class="close" onclick="closeProduct()">×</span>
+
+        <img id="detailImage" src="" alt="Product">
+
+        <h2 id="detailName"></h2>
+        <p id="detailDescription"></p>
+        <h3 id="detailPrice"></h3>
+
+        <button id="detailCart" class="add-btn">
+            Add to Cart
+        </button>
+    </div>
+</div>
+
+
+<div id="cartModal" class="modal">
+    <div class="modal-box cart-box">
+        <span class="close" onclick="closeCart()">×</span>
+
+        <h2> Your Cart</h2>
+
+        <div id="cartItems"></div>
+
+        <h3>Total: ₹<span id="cartTotal">0</span></h3>
+
+        <button class="checkout" onclick="checkout()">
+            Checkout
+        </button>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 ShopEase | E-Commerce Frontend</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
